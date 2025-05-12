@@ -1,7 +1,7 @@
 {
   "name": "catodoro",
-  "displayName": "catoDoro",
-  "description": "test vsCode extension",
+  "displayName": "catodoro",
+  "description": "",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.100.0"
@@ -9,15 +9,34 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "catodoro.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "myextension-sidebar-view",
+          "title": "My Extension",
+          "icon": "resources/cat.png"
+        }
+      ]
+    },
+    "views": {
+      "myextension-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "myextension-sidebar",
+          "name": "MyExtension",
+          "icon": "resources/cat.png",
+          "contextualTitle": "MyExtension"
+        }
+      ]
+    },
+    "files": [
+      "out",
+      "resources",
+      "webview-dist"
+    ],
+    "commands": []
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
