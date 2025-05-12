@@ -14,27 +14,25 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "myextension-sidebar-view",
-          "title": "My Extension",
+          "id": "myExtension-sidebar-view",
+          "title": "CatoDoro",
           "icon": "resources/cat.png"
         }
       ]
     },
     "views": {
-      "myextension-sidebar-view": [
+      "myExtension-sidebar-view": [
         {
           "type": "webview",
-          "id": "myextension-sidebar",
-          "name": "MyExtension",
-          "icon": "resources/cat.png",
-          "contextualTitle": "MyExtension"
+          "id": "myExtension-sidebar",
+          "name": "CatoDoro",
+          "icon": "resources/cat.png"
         }
       ]
     },
     "files": [
       "out",
-      "resources",
-      "webview-dist"
+      "resources"
     ],
     "commands": []
   },

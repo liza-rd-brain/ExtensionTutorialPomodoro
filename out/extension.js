@@ -34,13 +34,13 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-const vscode = __importStar(require("vscode"));
-const { SidebarProvider } = require('./SidebarProvider');
+const vscode = __importStar(require("vscode")); // Импортируем API VS Code
+const { SidebarProvider } = require('./SidebarProvider'); // Подключаем класс SidebarProvider
 function activate(context) {
-    // Register the Sidebar Provider
-    const sidebarProvider = new SidebarProvider(context.extensionUri, context);
-    context.subscriptions.push(vscode.window.registerWebviewViewProvider('myextension-sidebar', sidebarProvider));
+    // Создаём экземпляр SidebarProvider 
+    const sidebarProvider = new SidebarProvider();
+    // Регистрируем вебвью в сайдбаре:
+    // 'myExtension-sidebar' — это ID, который должен совпадать с package.json
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('myExtension-sidebar', sidebarProvider));
 }
 //# sourceMappingURL=extension.js.map

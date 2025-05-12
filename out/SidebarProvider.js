@@ -2,17 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SidebarProvider = void 0;
 class SidebarProvider {
-    _extensionUri;
-    _view;
-    _context;
-    constructor(_extensionUri, context) {
-        this._extensionUri = _extensionUri;
-        this._context = context;
-    }
+    _view; // Здесь будет храниться ссылка на вебвью
+    // Этот метод вызывается, когда VS Code создаёт вебвью
     resolveWebviewView(webviewView) {
-        this._view = webviewView;
-        webviewView.webview.html = this._getHtmlForWebview();
+        this._view = webviewView; // Сохраняем ссылку на вебвью
+        webviewView.webview.html = this._getHtmlForWebview(); // Загружаем HTML
     }
+    // Генерируем HTML, который будет отображаться в вебвью (взято с официального источника для примера)
     _getHtmlForWebview() {
         return `<!DOCTYPE html>
             <html lang="en">

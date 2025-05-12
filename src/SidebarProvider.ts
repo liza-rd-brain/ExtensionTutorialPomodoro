@@ -1,19 +1,16 @@
 import * as vscode from 'vscode';
 
 export class SidebarProvider implements vscode.WebviewViewProvider {
-    private _view?: vscode.WebviewView;
-    private _context: vscode.ExtensionContext;
+    private _view?: vscode.WebviewView; // Здесь будет храниться ссылка на вебвью
 
-    constructor(private readonly _extensionUri: vscode.Uri, context: vscode.ExtensionContext) {
-        this._context = context;
-    }
 
+    // Этот метод вызывается, когда VS Code создаёт вебвью
     public resolveWebviewView(webviewView: vscode.WebviewView) {
-        this._view = webviewView;
-        webviewView.webview.html = this._getHtmlForWebview();
-
+        this._view = webviewView; // Сохраняем ссылку на вебвью
+        webviewView.webview.html = this._getHtmlForWebview(); // Загружаем HTML
     }
 
+    // Генерируем HTML, который будет отображаться в вебвью (взято с официального источника для примера)
     private _getHtmlForWebview() {
         return `<!DOCTYPE html>
             <html lang="en">
@@ -27,5 +24,7 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
                 </body>
             </html>`;
     }
-
 }
+
+
+
