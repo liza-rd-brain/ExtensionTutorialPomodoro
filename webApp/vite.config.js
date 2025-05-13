@@ -3,12 +3,12 @@ import preact from '@preact/preset-vite';
 
 export default defineConfig({
     plugins: [preact()],
-    root: 'src', // Set the root directory to 'src'
+    root: 'src',
     build: {
-        outDir: '../dist', // Output directory for the build,
-        manifest: true, // Generate a manifest file
+        outDir: '../dist',
+        manifest: true,
         rollupOptions: {
-            input: 'src/index.html', // Entry point for the build
+            input: 'src/index.html',
             output: {
                 entryFileNames: `webview-build/[name].js`,
                 chunkFileNames: `webview-build/[name].js`,
@@ -16,5 +16,5 @@ export default defineConfig({
             },
         },
     },
-    base: '', // Ensure relative paths
+    base: '',
 });
