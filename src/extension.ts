@@ -11,11 +11,3 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.registerWebviewViewProvider('myExtension-sidebar', sidebarProvider)
 	);
 }
-
-
-
-
-
-
-
-
