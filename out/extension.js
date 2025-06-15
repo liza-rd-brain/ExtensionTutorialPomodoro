@@ -37,7 +37,7 @@ exports.activate = activate;
 const vscode = __importStar(require("vscode"));
 const { SidebarProvider } = require('./SidebarProvider');
 function activate(context) {
-    const sidebarProvider = new SidebarProvider();
+    const sidebarProvider = new SidebarProvider(context.extensionUri);
     context.subscriptions.push(vscode.window.registerWebviewViewProvider('myExtension-sidebar', sidebarProvider));
 }
 //# sourceMappingURL=extension.js.map
